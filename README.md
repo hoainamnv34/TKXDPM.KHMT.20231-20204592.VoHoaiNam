@@ -11,7 +11,7 @@ Repo tuân theo Release FLow gồm các branch:
 ![Alt text](workflow.png)
 
 
-# Week3: Hoàn thành SRS theo yêu cầu và template mới
+# Week4: Hoàn thành SRS theo yêu cầu và template mới
 Cô đã chỉnh sửa lại yêu cầu của AIMS trong thư mục Case study cho rõ ràng và đơn giản hơn, các em xem lại nhé. Thư mục folder môn học: https://www.dropbox.com/scl/fo/ozy9nf0ukoqoiofeh0j5g/h?rlkey=o5yu19v9zc93unupmry4awl11&dl=0
 
 Bài tập là hoàn thành SRS theo mẫu mới (cô đã update trong thư mục Template), hướng dẫn cho các phần việc cần làm trong file Assignment00-SRS.pdf trong thư mục Assignment.

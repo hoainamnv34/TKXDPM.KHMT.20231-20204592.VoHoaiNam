@@ -11,7 +11,7 @@ Repo tuân theo Release FLow gồm các branch:
 ![Alt text](workflow.png)
 
 
-#Week6: FINAL - Thiết kế giao diện cho UC đặt hàng (23/10/2023)
+# Week6: FINAL - Thiết kế giao diện cho UC đặt hàng (23/10/2023)
 Hoàn thiện phần thiết kế giao diện cho các tính năng liên quan đến đặt hàng, bao gồm: Class diagram, Interaction diagram. Chú ý, thiết kế giao diện bao gồm:
 1. Giao diện người dùng (UI) tương tác với Khách hàng
 2. Giao diện hệ thống (SI) tương tác với VNPay

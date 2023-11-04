@@ -11,9 +11,11 @@ Repo tuân theo Release FLow gồm các branch:
 ![Alt text](workflow.png)
 
 
-# Week4: Hoàn thành SRS theo yêu cầu và template mới
-Cô đã chỉnh sửa lại yêu cầu của AIMS trong thư mục Case study cho rõ ràng và đơn giản hơn, các em xem lại nhé. Thư mục folder môn học: https://www.dropbox.com/scl/fo/ozy9nf0ukoqoiofeh0j5g/h?rlkey=o5yu19v9zc93unupmry4awl11&dl=0
+# Week7_2: Mô hình hoá dữ liệu cho UC đặt hàng (30/10/2023)
+Các bạn hãy mô hình hoá dữ liệu cho các use case liên quan đến đặt hàng, bao gồm các phần kết quả sau:
+Conceptual data model: Entity-Relation Diagram (ERD)
+Logical data model: Database Design Diagram
+Physical data model: Cài đặt phần thiết kế trên MySQL, nộp SQL Script để tạo ra các bảng, ràng buộc, index, view (nếu có)
 
-
-Hướng dẫn và yêu cầu về bài tập này được đưa ra trong file Assignment01-Use case analysis.pdf thư mục Assignment trong folder môn học (https://www.dropbox.com/scl/fo/ozy9nf0ukoqoiofeh0j5g/h?rlkey=o5yu19v9zc93unupmry4awl11&dl=0).
+Có thể tham khảo trong Assignment 04 trong folder môn học: https://drive.google.com/drive/folders/16xudhbh-hf5Ypc8hR7FoEvf2SeOufmkp?usp=share_link
 

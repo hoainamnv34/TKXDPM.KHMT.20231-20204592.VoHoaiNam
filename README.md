@@ -11,9 +11,10 @@ Repo tuân theo Release FLow gồm các branch:
 ![Alt text](workflow.png)
 
 
-# Week4: Hoàn thành SRS theo yêu cầu và template mới
-Cô đã chỉnh sửa lại yêu cầu của AIMS trong thư mục Case study cho rõ ràng và đơn giản hơn, các em xem lại nhé. Thư mục folder môn học: https://www.dropbox.com/scl/fo/ozy9nf0ukoqoiofeh0j5g/h?rlkey=o5yu19v9zc93unupmry4awl11&dl=0
-
-
-Hướng dẫn và yêu cầu về bài tập này được đưa ra trong file Assignment01-Use case analysis.pdf thư mục Assignment trong folder môn học (https://www.dropbox.com/scl/fo/ozy9nf0ukoqoiofeh0j5g/h?rlkey=o5yu19v9zc93unupmry4awl11&dl=0).
+# Week8: Thực hiện TDD cho AIMS (6/11/2023)
+Hãy thực hiện kiểm thử và lập trình theo phương pháp TDD cho AIMS, cụ thể như sau:
+Thiết kế các trường hợp kiểm thử theo các kỹ thuật kiểm thử hộp đen như Phân vùng tương đương, Phân tích giá trị biên, Bảng quyết định.
+Xây dựng các trường hợp kiểm thử trên JUnit cho các lớp trong các use case liên quan đến đặt hàng trong Project Java AIMS, tham khảo mã nguồn ví dụ trên https://github.com/trangntt-for-student/AIMS
+Lập trình đầy đủ cho các use case liên quan đến đặt hàng trong AIMS cho đến khi thoả mãn tất cả các test case ở trên (pass)
+Điền và hoàn thành file TestPlan theo template trong thư mục Template trong folder môn học https://drive.google.com/drive/folders/16xudhbh-hf5Ypc8hR7FoEvf2SeOufmkp
 

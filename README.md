@@ -9,6 +9,7 @@ Repo tuân theo Release FLow gồm các branch:
 - feature, hotfix, topic, bugfix, refactor, ...
 
 ![Alt text](workflow.png)
+===
 
 
 # Week8: Thực hiện TDD cho AIMS (6/11/2023)
@@ -17,4 +18,6 @@ Thiết kế các trường hợp kiểm thử theo các kỹ thuật kiểm th�
 Xây dựng các trường hợp kiểm thử trên JUnit cho các lớp trong các use case liên quan đến đặt hàng trong Project Java AIMS, tham khảo mã nguồn ví dụ trên https://github.com/trangntt-for-student/AIMS
 Lập trình đầy đủ cho các use case liên quan đến đặt hàng trong AIMS cho đến khi thoả mãn tất cả các test case ở trên (pass)
 Điền và hoàn thành file TestPlan theo template trong thư mục Template trong folder môn học https://drive.google.com/drive/folders/16xudhbh-hf5Ypc8hR7FoEvf2SeOufmkp
+
+
 

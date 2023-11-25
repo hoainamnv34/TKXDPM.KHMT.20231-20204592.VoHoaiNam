@@ -24,13 +24,10 @@ public class MainScreenController extends Application {
             Parent root = loader.load();
             CartScreenController controller = loader.getController();
 
-            controller.cart = createNewCart();
-            controller.amountText.setText("hello");
-            controller.initView();
+            controller.initView(Cart.createNewCart());
 
 
             Scene scene = new Scene(root);
-//            scene.getStylesheets().add(getClass().getResource("Style.css").toExternalForm());
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -39,19 +36,9 @@ public class MainScreenController extends Application {
 
     }
 
-    private Cart createNewCart() {
 
 
-        Media media0 = new Media(0, "Boo1", "book", 40000, 20000, 10, "../assets/images.jpeg");
-        Media media1 = new Media(0, "Book2", "book", 40000, 20000, 20, "../assets/images.jpeg");
 
-        CartMedia cartMedia1 = new CartMedia(media0, 2, 40000 );
-        CartMedia cartMedia2 = new CartMedia(media1, 1, 20000 );
-
-        Cart cart = new Cart();
-        cart.setListCartMedia(List.of(cartMedia1, cartMedia2));
-        return cart;
-    }
 
 
     public void on(String[] args) {

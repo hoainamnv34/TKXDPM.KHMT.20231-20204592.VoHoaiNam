@@ -78,4 +78,9 @@ public class Media {
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
+
+
+    public boolean checkRushOrderMedia() {
+        return true;
+    }
 }

@@ -1,7 +1,11 @@
 package com.example.aims.view;
 
 import com.example.aims.controller.PlaceOrderController;
-import com.example.aims.entity.*;
+import com.example.aims.controller.RushOrderController;
+import com.example.aims.entity.DeliveryAddress;
+import com.example.aims.entity.Invoice;
+import com.example.aims.entity.Order;
+import com.example.aims.entity.OrderMedia;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,17 +19,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class InvoiceScreenController implements Initializable {
+public class RushOrderScreenController implements Initializable {
+
     @FXML
     GridPane gridPane;
-
 
     @FXML
     Text nameText;
@@ -37,10 +42,15 @@ public class InvoiceScreenController implements Initializable {
     Text addressText;
 
     @FXML
-    Text shippingIntructionsText;
+    TextField shippingInstructionsText;
 
     @FXML
     Text provinceText;
+
+    @FXML
+    ComboBox<String> timeComboBox;
+
+
 
     @FXML
     Text subTotalText;
@@ -55,42 +65,48 @@ public class InvoiceScreenController implements Initializable {
     Text amountText;
 
 
-
-
-    @FXML
-    CheckBox rushOrderCheckbox;
-
     @FXML
     Button submitBtn;
 
-
-    @FXML
-    Button backBtn;
+    private  RushOrderController rushOrderController;
 
 
-    private PlaceOrderController placeOrderController;
-
-    public void setPlaceOrderController(PlaceOrderController placeOrderController) {
-        this.placeOrderController = placeOrderController;
+    public void setRushOrderController(RushOrderController rushOrderController) {
+        this.rushOrderController = rushOrderController;
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        rushOrderCheckbox.setSelected(false);
-        rushOrderCheckbox.setOnAction(this::handleCheckBox);
+        timeComboBox.getItems().addAll(Arrays.asList("08:00 AM", "12:00 AM", "03:30 PM", "07:00 PM"));
+        timeComboBox.getSelectionModel().selectFirst();
 
         gridPane.setHgap(10);
         gridPane.setVgap(40);
     }
 
-    public void initView() {
-        Invoice invoice =  placeOrderController.getInvoice();
+    @FXML
+    protected void Submit(ActionEvent event) throws IOException {
 
-        Order order = invoice.getOrder();
+        HashMap<String, String> rushDeliveryInfo = new HashMap<>();
+        rushDeliveryInfo.put("DeliveryTime", timeComboBox.getValue().toString());
+        rushDeliveryInfo.put("InstructionDelivery", shippingInstructionsText.getText());
+
+        if(rushOrderController.processRushDeliveryInfo(rushDeliveryInfo)) {
+            rushOrderController.requestChoicePaymentMethod();
+        }
+
+    }
+
+
+    public void initView() {
+
+        Invoice invoice = rushOrderController.getInvoice();
+
+        Order order = rushOrderController.getInvoice().getOrder();
 
         List<OrderMedia> orderMediaList = order.getLstOrderMedia();
 
         for(int i = 1; i <= orderMediaList.size(); i++) {
-            System.out.println("order media size: " + orderMediaList.size());
             Image image = new Image(getClass().getResourceAsStream("images.jpeg"));
             ImageView imageView = new ImageView();
             imageView.setImage(image);
@@ -101,6 +117,7 @@ public class InvoiceScreenController implements Initializable {
             gridPane.add(new Text(String.valueOf(orderMediaList.get(i-1).getMedia().getPrice())),1, i);
             gridPane.add(new Text(String.valueOf(orderMediaList.get(i-1).getQuantity())),2, i);
             gridPane.add(new Text(String.valueOf(orderMediaList.get(i-1).getPrice())),3, i);
+            gridPane.add(new CheckBox(),4, i);
         }
 
         DeliveryAddress deliveryAddress = order.getDeliveryAddress();
@@ -109,30 +126,10 @@ public class InvoiceScreenController implements Initializable {
         phoneText.setText(deliveryAddress.getPhone());
         provinceText.setText(deliveryAddress.getProvince());
         addressText.setText(deliveryAddress.getAddress());
-        shippingIntructionsText.setText(deliveryAddress.getInstruction());
 
         subTotalText.setText(String.valueOf(invoice.getSubAmount()));
         vatText.setText(String.valueOf(invoice.getVat()));
         shippingFeeText.setText(String.valueOf(invoice.getOrder().getShippingFee()));
         amountText.setText(String.valueOf(invoice.getTotalAmount()));
-    }
-
-    private void handleCheckBox(ActionEvent event) {
-        // Check if the checkbox is selected
-        if (rushOrderCheckbox.isSelected()) {
-            try {
-                placeOrderController.requestRushOrder();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
-
-
-
-
-    @FXML
-    protected void Submit(ActionEvent event) throws IOException {
-        placeOrderController.choicePaymentMethod();
     }
 }

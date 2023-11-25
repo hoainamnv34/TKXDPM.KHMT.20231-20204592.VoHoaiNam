@@ -57,7 +57,7 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" GridPane.columnIndex="3" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Actions" GridPane.columnIndex="5" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Price" GridPane.columnIndex="4" />
-                        <CheckBox fx:id="choiceAllCheckbox" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" />
+                        <CheckBox alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" />
                     </children>
                 </GridPane>
             </children>
@@ -90,14 +90,26 @@
                                         <Insets bottom="20.0" />
                                     </padding>
                                 </HBox>
-                                <HBox prefHeight="100.0" prefWidth="200.0" />
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amount:">
+                                            <HBox.margin>
+                                                <Insets right="10.0" />
+                                            </HBox.margin>
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Text>
+                                        <Text id="amountText" fx:id="amountText" strokeType="OUTSIDE" strokeWidth="0.0" text="1100đ">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font></Text>
+                                    </children>
+                                </HBox>
                             </children>
                         </VBox>
                         <Pane prefHeight="96.0" prefWidth="140.0" />
-                        <Button fx:id="placeOrderBtn" mnemonicParsing="false" onAction="#requestToPlaceOrder" prefHeight="51.0" prefWidth="180.0" text="Place Order">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Button>
+                        <Button fx:id="placeOrderBtn" mnemonicParsing="false" onAction="#Submit" text="Place Order" />
                     </children>
                     <VBox.margin>
                         <Insets left="10.0" />

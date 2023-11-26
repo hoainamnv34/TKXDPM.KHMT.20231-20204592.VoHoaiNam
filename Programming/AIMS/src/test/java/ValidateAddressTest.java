@@ -20,7 +20,7 @@ public class ValidateAddressTest {
             ", false",
     })
 
-    public void test1(String address, boolean expected) {
+    public void testValidateAddress(String address, boolean expected) {
         boolean isValid = placeOrderController.validateAddress(address);
         assertEquals(expected, isValid);
     }

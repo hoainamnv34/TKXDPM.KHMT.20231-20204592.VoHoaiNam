@@ -9,6 +9,16 @@ public class Media {
     private int quantity;
     private String imageURL;
 
+    private MediaShippingMethod mediaShippingMethod;
+
+    public void setMediaShippingMethod(MediaShippingMethod mediaShippingMethod) {
+        this.mediaShippingMethod = mediaShippingMethod;
+    }
+
+    public MediaShippingMethod getMediaShippingMethod() {
+        return mediaShippingMethod;
+    }
+
     public Media () {
 
     }

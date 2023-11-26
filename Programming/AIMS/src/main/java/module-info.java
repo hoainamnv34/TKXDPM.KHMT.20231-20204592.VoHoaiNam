@@ -11,5 +11,6 @@ module com.example.aims {
     opens com.example.aims.subsystem.vnpay to javafx.fxml;
 
     opens com.example.aims.controller;
+    opens com.example.aims.entity;
 
 }

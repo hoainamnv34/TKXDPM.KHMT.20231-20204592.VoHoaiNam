@@ -12,11 +12,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class PlaceOrderController {
@@ -40,7 +38,6 @@ public class PlaceOrderController {
 
             try {
                 this.currentScene = currentScene;
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("ShippingScreen.fxml"));
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/aims/view/ShippingScreen.fxml"));
                 Parent root = loader.load();
 

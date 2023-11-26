@@ -9,6 +9,7 @@ Repo tuân theo Release FLow gồm các branch:
 - feature, hotfix, topic, bugfix, refactor, ...
 
 ![Alt text](workflow.png)
+===
 
 
 # Week10: FINAL - Hoàn thiện mã nguồn và Unit Test cho AIMS (20/11/2023)
@@ -19,6 +20,7 @@ Viết rõ hướng tiếp cận test (hộp đen hay hộp trắng) và kỹ th
 Phần Test Scenario có thể dùng chung cho các Unit Test (do các bước có thể giống nhau), phần Unit Test nào khác (thêm các bước khác như chuẩn bị dữ liệu, kết nối các thành phần...) thì mới cần đặc tả riêng.
 Không cần ánh xạ Requirement và Test case, chỉ cần ánh xạ Test case với Use case. Phần Requirement bỏ trống.
 Unit Test ngoài phần viết test cho các phương thức liên quan đến validate dữ liệu, cần viết các unit test cho các phương thức liên quan đến nghiệp vụ của bài toán như kiểm tra hàng còn không, tính phí shipping (đơn thường và đơn nhanh), tính hoá đơn, thanh toán đơn hàng...
+
 
  PS: Nhắc lại các bước thực hiện TDD như sau:
 Viết khung mã nguồn / sinh khung mã nguồn từ bản thiết kế (classs diagrams, interaction diagrams)

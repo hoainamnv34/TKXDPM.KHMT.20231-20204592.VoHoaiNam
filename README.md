@@ -11,7 +11,7 @@ Repo tuân theo Release FLow gồm các branch:
 ![Alt text](workflow.png)
 
 
-# Week8: FINAL - Hoàn thiện mã nguồn và Unit Test cho AIMS (20/11/2023)
+# Week10: FINAL - Hoàn thiện mã nguồn và Unit Test cho AIMS (20/11/2023)
 Hãy hoàn thiện phần kiểm thử đơn vị và lập trình theo phương pháp TDD cho các use case liên quan đến đặt hàng AIMS. Lưu ý:
 Vẽ lại các biểu đồ thiết kế (biểu đồ trình tự, biểu đồ lớp) nếu có thay đổi thiết kế. Bản thiết kế cần tuyệt đối giống mã nguồn
  Phần thanh toán dùng VNPay cần vẽ lại và lập trình để kết nối và thực hiện thanh toán thành công theo đúng thực tế. Có thể dùng Paypal thay cho VNPay hoặc cả hai (được bonus điểm)

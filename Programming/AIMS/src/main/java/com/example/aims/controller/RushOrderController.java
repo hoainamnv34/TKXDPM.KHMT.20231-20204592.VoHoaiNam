@@ -1,6 +1,7 @@
 package com.example.aims.controller;
 
 import com.example.aims.entity.Invoice;
+import com.example.aims.entity.Media;
 import com.example.aims.view.RushOrderScreenController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -40,14 +41,32 @@ public class RushOrderController {
 
     }
 
+    public boolean validateMediaRushOrder(Media media) {
+        if(media.getMediaShippingMethod().getNameMethod().equals("Rush Order")) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public boolean checkRushOrderAddress(String province) {
+        if(province == null || province.isEmpty()) {
+            return false;
+        }
+        if (province.equals("Hà Nội")) {
+            return true;
+        }
+        return false;
+    }
+
     public void confirmRushOrder() {
 
     }
 
 
     public Boolean processRushDeliveryInfo(HashMap<String, String> rushDeliveryInfo) {
-
-        if(!this.validateDeliveryInfo( rushDeliveryInfo)) {
+        String instructionDelivery = rushDeliveryInfo.get("InstructionDelivery");
+        if(!this.validateDeliveryInfo( instructionDelivery)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Thông báo");
             alert.setHeaderText("Instruction không được để trống");
@@ -62,8 +81,7 @@ public class RushOrderController {
         placeOrderController.choicePaymentMethod();
     }
 
-    private boolean validateDeliveryInfo(HashMap<String, String> rushDeliveryInfo) {
-        String instructionDelivery = rushDeliveryInfo.get("InstructionDelivery");
+    public boolean validateDeliveryInfo(String instructionDelivery) {
         if (instructionDelivery == null)
             return false;
         if (instructionDelivery.trim().length() == 0)
